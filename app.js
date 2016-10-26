@@ -13,17 +13,32 @@ function Location(storeName, minCust , maxCust, avgCookieSales){
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
   };
   //build table within this function
-  this.forEachHour = function forEachHour (){
-    var tr = document.createElement('tr');
-    var table = document.getElementById('buildTable');
-    table.appendChild(tr);
+
     // console.log('tr: ', tr);
+
+  var tr = document.createElement('tr');
+  var table = document.getElementById('buildTable');
+  tr.textContent = ' ' + this.storeName;
+  table.appendChild(tr);
+
+  var th = document.createElement('th');
+  var table = document.getElementById('buildTable');
+  th.textContent = ' ' + hours;
+  table.appendChild(th);
+
+  this.forEachHour = function forEachHour (){
     for (var i = 0; i < hours.length; i++) {
       console.log(hours[i] + this.dailyCookieSalesPerHour[i]);
       var td = document.createElement('td');
+      var th = document.getElementByTag('th');
       td.textContent = hours[i] + this.dailyCookieSalesPerHour[i];
-      console.log('td after textContent: ', td);
-      tr.appendChild(td);
+      // console.log('td after textContent: ', td);
+
+      th.appendChild(td);
+      // var tr = document.createElement('tr');
+      // var table = document.getElementById('buildTable');
+      // th.textContent = this.storeName;
+      // table.appendChild(tr);
       // thead.appendChild(tr);
     }
 
