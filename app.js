@@ -23,6 +23,8 @@ function Location(Location, minCust , maxCust, avgCookieSales){
   // create the td cells that hold the daily cookies sales results
 
   this.forEachHour = function forEachHour (){
+    console.log(this.storeName + 'forEachHour');
+    // randomCookieSalesPerHour()
     var trBlankLocation = document.createElement('tr');//this builds the tr (blank) that will house the tds for shopname and numb of cookies
     var attachTrToTable = document.getElementById('table');
     trBlankLocation.textContent = '';
@@ -34,7 +36,6 @@ function Location(Location, minCust , maxCust, avgCookieSales){
     for (var i = 0; i < hours.length; i++) {
       var tdDailySalesPerHour = document.createElement('td');
       // trBlankLocation = document.getElementById('trBlankLocation');
-      console.log('this.dailyCookieSalesPerHour: ', this.dailyCookieSalesPerHour);
       tdDailySalesPerHour.textContent = this.dailyCookieSalesPerHour[i];
       trBlankLocation.appendChild(tdDailySalesPerHour);
     };
@@ -75,37 +76,76 @@ function createHeaderForHours(){
 };
 // this is what runs the data from the location array and enters it into the tr
 function forEachLocation() {
+  console.log('forEachLocation');
+  var grabTable = document.getElementById('table');
+  console.log(grabTable);
+  grabTable.innerHTML = '';
   createHeaderForHours();
   for (var i = 0; i < allLocations.length; i++){
-    console.log(allLocations[i]);
+    console.log('allLocations[i]: ', allLocations[i]);
     allLocations[i].randomCookieSalesPerHour();
     allLocations[i].forEachHour();
   };
 };
+// Start of Event Code
+//
+// var form = document.getElementById('getCookieSalesPerDay');
+// function cookieSalesFormSubmitHandler(event) {
+//   event.preventDefault();
+//   // var name = event.target[name].value;
+//   var name = event.target.name.value;
+//   var minHourlyCustomers = event.target.minHourlyCustomers.value;
+//   var maxHourlyCustomers = event.target.maxHourlyCustomers.value;
+//   var averageCookies = event.target.averageCookies.value;
+//   var tBody = document.getElementById('store-body');
+//
+//   var store = new Store(name,minHourlyCustomers,maxHourlyCustomers,averageCookies);
+//
+//   locationArray.push(store);
+//   tBody.innerHTML = '';
+//   for (var i = 0; i < locationArray.length; i++){
+//     locationArray[i].renderSales();
+//   };
+//
+//   for (var i = 0; i < fieldset.children.length + 1; i++) {
+//     event.target[i].value = '';
+//   };
+// }
+// Start of Event Code
+
+var form = document.getElementById('formId');
+function cookieSalesFormSubmitHandler(event) {
+  event.preventDefault();
+  // var name = event.target[name].value;
+  var name = event.target.name.value;
+  var minHourlyCustomers = parseInt(event.target.minCust.value);
+  var maxHourlyCustomers = parseInt(event.target.maxCust.value);
+  var averageCookies = parseInt(event.target.avgCookieSales.value);
+  // var table = document.getElementById('table');
+
+  var store = new Location(name,minHourlyCustomers,maxHourlyCustomers,averageCookies);
+
+  allLocations.push(store);
+  console.log('allLocations: ', allLocations);
+  // table.innerHTML = '';
+  forEachLocation();
+  // for (var i = 0; i < allLocations.length; i++){
+  //   console.log(i, allLocations[i].storeName);
+  //   allLocations[i].forEachHour();
+  //   console.log(allLocations[i]);
+  // };
+
+  for (var i = 0; i < fieldset.children.length + 1; i++) {
+    event.target[i].value = '';
+  };
+}
+
 forEachLocation();
+
+form.addEventListener('submit', cookieSalesFormSubmitHandler);
 
 // var makeNewElement = function(elementTag, elementContent, target){
 //   var newEl = document.createElement(elementTag);
 //   newEl.innerText = elementContent;
 //   target.appendChild(newEl);
 // };
-// forEachHour();
-// Other way to do the same thing:
-// var location1 = new Location();
-// var location2 = new Location();
-// var allLocations = [
-//   location1,
-//   location2
-// ];
-
-// console.log('allLocations: ', allLocations);
-
-// for (var i = 0; i < hours.length; i++){
-//   console.log('this: ');
-//   console.log('hours[i]: ', hours[i]);
-//   console.log('this.dailyCookieSalesPerHour: ', this.dailyCookieSalesPerHour);
-//   console.log('this.dailyCookieSalesPerHour[i]: ', this.dailyCookieSalesPerHour[i]);
-  // (hours[i] + this.dailyCookieSalesPerHour[i]);
-  // hours[i].cookiesPerHour();
-  // hours[i].randomCookieSalesPerHour();
-// }

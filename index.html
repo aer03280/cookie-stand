@@ -20,8 +20,18 @@
     <p>contact</p>
     </article>
     <main>
-      <table id="table">
-      </table>
+      <section id="formSection">
+        <form id="formId" method="post">
+          <fieldset id="fieldset"><legend>Add Store From</legend>
+            <input id="name" type="text" name="name" placeholder="Enter Store Name">
+            <input id="minCust" type="number" name="minCust" placeholder="Enter Minimum Number">
+            <input id="maxCust" type="number" name="maxCust" placeholder="Enter Maximum Number">
+            <input id="avgCookieSales" type="number" name="avgCookieSales" placeholder="Enter Average Cookies">
+          </fieldset>
+          <input id="submt" type="submit" value="Submit Form">
+        </form>
+        <table id="table">
+        </table>
     </main>
      <script src="app.js" charset="utf-8"></script>
   </body>
