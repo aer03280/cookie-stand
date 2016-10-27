@@ -1,7 +1,7 @@
 'use strict';
 
 // located here as a global value that can be used for all locations
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var hours = [' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 //functions: cookiesPerHour, predictedCustomers, renderHTMLSales
 function Location(Location, minCust , maxCust, avgCookieSales){
@@ -23,36 +23,19 @@ function Location(Location, minCust , maxCust, avgCookieSales){
   // create the td cells that hold the daily cookies sales results
 
   this.forEachHour = function forEachHour (){
-    var thead = document.createElement('thead');
-    var table = document.getElementByID('table');
-    thead.textContent = 'test';
-    table.appendChild(thead);
-    var tr = document.createElement('tr');
-    var thead = document.getElementById('thead');
-    tr.textContent = hours;
-    thead.appendChild(tr);
-    for (var i = 0; i < hours.length; i++) {
-      var th = document.createElement('th');
-      var tr = document.getElementByTag('tr');
-      th.textContent = ' ' + this.storeName;
-      tr.appendChild(th);
-      var td = document.createElement('td');
-      var th = document.getElementByTag('th');
+    var trBlankLocation = document.createElement('tr');//this builds the tr (blank) that will house the tds for shopname and numb of cookies
+    var attachTrToTable = document.getElementById('table');
+    trBlankLocation.textContent = '';
+    attachTrToTable.appendChild(trBlankLocation);
+    var tdFirst = document.createElement('td');
+    trBlankLocation = document.getElementById('trBlankLocation');
+    tdFirst.textContent = this.storeName;
+    trBlankLocation.appendChild(tdFirst);
+    for (var i = 1; i < hours.length; i++) {
+      var tdDailySalesPerHour = document.createElement('td');
+      trBlankLocation = document.getElementById('trBlankLocation');
       td.textContent = this.dailyCookieSalesPerHour;
-      th.appendChild(td);
-      // th.appendChild(tr);
-      // console.log(hours[i] + this.dailyCookieSalesPerHour[i]);
-      // var td = document.createElement('td');
-      // var tr = document.getElementByTag('tr');
-      // td.textContent = this.dailyCookieSalesPerHour[i];
-      // var thead = document.createElement('thead');
-      // console.log('td after textContent: ', td);
-      // tr.appendChild(td);
-      // var tr = document.createElement('tr');
-      // var table = document.getElementById('buildTable');
-      // th.textContent = this.storeName;
-      // table.appendChild(tr);
-      // thead.appendChild(tr);
+      trBlankLocation.appendChild(tdDailySalesPerHour);
     }
 
  //    var li = document.createElement('li');
@@ -86,6 +69,11 @@ function forEachLocation() {
 }
 forEachLocation();
 
+// var makeNewElement = function(elementTag, elementContent, target){
+//   var newEl = document.createElement(elementTag);
+//   newEl.innerText = elementContent;
+//   target.appendChild(newEl);
+// };
 // forEachHour();
 // Other way to do the same thing:
 // var location1 = new Location();
