@@ -1,6 +1,6 @@
 'use strict';
 'use strict';
-
+// CODE Review- TUES TABLES
 
 var th = document.createElement('th');
 var table = document.getElementById('buildTable');
@@ -32,6 +32,8 @@ function Location(storeName, minCust , maxCust, avgCookieSales){
   this.maxCust = maxCust;
   this.avgCookieSales = avgCookieSales;
   this.dailyCookieSalesPerHour = [];
+  this.locationTotals = 0;
+  this.locationLog = [];
   this.randomCustPerHour = function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
   };
