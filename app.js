@@ -1,7 +1,7 @@
 'use strict';
 
 // located here as a global value that can be used for all locations
-var hours = [' ', '6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 //functions: cookiesPerHour, predictedCustomers, renderHTMLSales
 function Location(Location, minCust , maxCust, avgCookieSales){
@@ -26,17 +26,18 @@ function Location(Location, minCust , maxCust, avgCookieSales){
     var trBlankLocation = document.createElement('tr');//this builds the tr (blank) that will house the tds for shopname and numb of cookies
     var attachTrToTable = document.getElementById('table');
     trBlankLocation.textContent = '';
-    attachTrToTable.appendChild(trBlankLocation);
+    table.appendChild(trBlankLocation);
     var tdFirst = document.createElement('td');
-    trBlankLocation = document.getElementById('trBlankLocation');
+    // trBlankLocation = document.getElementById('trBlankLocation');
     tdFirst.textContent = this.storeName;
     trBlankLocation.appendChild(tdFirst);
-    for (var i = 1; i < hours.length; i++) {
+    for (var i = 0; i < hours.length; i++) {
       var tdDailySalesPerHour = document.createElement('td');
-      trBlankLocation = document.getElementById('trBlankLocation');
-      td.textContent = this.dailyCookieSalesPerHour;
+      // trBlankLocation = document.getElementById('trBlankLocation');
+      console.log('this.dailyCookieSalesPerHour: ', this.dailyCookieSalesPerHour);
+      tdDailySalesPerHour.textContent = this.dailyCookieSalesPerHour[i];
       trBlankLocation.appendChild(tdDailySalesPerHour);
-    }
+    };
 
  //    var li = document.createElement('li');
  // li.innerText = 'Total Sales: ' + totalSales + ' cookies';
@@ -59,14 +60,28 @@ var allLocations = [
   new Location('Alki', 2, 16, 4.6),
 
 ];
+//create header row for hours
+function createHeaderForHours(){
+  var trHours = document.createElement('tr');
+  var table = document.getElementById('table');
+  table.appendChild(trHours);
+  var thBlankHour = document.createElement('th');
+  trHours.appendChild(thBlankHour);
+  for (var i = 0; i < hours.length; i++) {
+    var thHours = document.createElement('th');
+    thHours.textContent = hours[i];
+    trHours.appendChild(thHours);
+  };
+};
 // this is what runs the data from the location array and enters it into the tr
 function forEachLocation() {
+  createHeaderForHours();
   for (var i = 0; i < allLocations.length; i++){
     console.log(allLocations[i]);
     allLocations[i].randomCookieSalesPerHour();
     allLocations[i].forEachHour();
-  }
-}
+  };
+};
 forEachLocation();
 
 // var makeNewElement = function(elementTag, elementContent, target){
