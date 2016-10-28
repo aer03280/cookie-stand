@@ -10,9 +10,9 @@
 }
 
 input[type="submit"] {
-  border: 3px solid black;
+  border-width; thin;
   background-color: #ff6600;
-  margin-top: 30px;
+  margin-top: 10px;
   margin-left: 18%;
   padding:5px;
   color: white;
@@ -34,10 +34,10 @@ input[type="submit"]:hover {
 }
 
 #fieldset{
-  border: ridge grey 2px;
+  border-width: medium;;
   background-color: #f3f315;
   width: 20%;
-  height: 150px;
+  height: 180px;
   margin: 20px;
 }
 
@@ -48,6 +48,7 @@ input[type="submit"]:hover {
 .name{
   display: block;
   margin: 10px 5px 5px 5px;
+  border-width: thin;
 }
 
 
