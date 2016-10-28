@@ -54,7 +54,7 @@ function Location(Location, minCust , maxCust, avgCookieSales){
 };
 
 var allLocations = [
-  new Location('first-and-pike', 23, 65, 6.3),
+  new Location('First-and-Pike', 23, 65, 6.3),
   new Location('Seatac', 3, 24, 1.2),
   new Location('Seattle Center', 11, 38, 3.7),
   new Location('Capitol Hill', 20, 38, 2.3),
