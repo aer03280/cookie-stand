@@ -67,6 +67,8 @@ function createHeaderForHours(){
   var table = document.getElementById('table');
   table.appendChild(trHours);
   var thBlankHour = document.createElement('th');
+  // assigning id to blank hour row to give submit button more space
+  // thBlankHour.setAttribute('thBlankHour' , ID);
   trHours.appendChild(thBlankHour);
   for (var i = 0; i < hours.length; i++) {
     var thHours = document.createElement('th');

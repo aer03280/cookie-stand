@@ -22,13 +22,15 @@
     <main>
       <section id="formSection">
         <form id="formId" method="post">
-          <fieldset id="fieldset"><legend>Cookie Calculator</legend>
-            <input id="name" type="text" name="name" placeholder="Enter Store Name">
-            <input id="minCust" type="number" name="minCust" placeholder="Minimum # Customers">
-            <input id="maxCust" type="number" name="maxCust" placeholder="Maximum # Customers">
-            <input id="avgCookieSales" type="number" name="avgCookieSales" placeholder="Avg # Cookies / Hour">
-          </fieldset>
+          <fieldset id="fieldset"><legend id="cookieCalculator">Cookie Calculator</legend>
+            <div id="inputBox">
+            <input id="name" class="name" type="text" name="name" placeholder="Enter Store Name">
+            <input id="minCust" class="name" type="number" name="minCust" placeholder="Minimum # Customers">
+            <input id="maxCust" class="name" type="number" name="maxCust" placeholder="Maximum # Customers">
+            <input id="avgCookieSales" class="name" type="number" name="avgCookieSales" placeholder="Avg # Cookies / Hour">
+          </div>
           <input id="submit" type="submit" value="Submit Form">
+          </fieldset>
         </form>
         <table id="table">
         </table>
