@@ -81,8 +81,6 @@
 
 }
 
-home.addEventListener('hover', function);
-this.style['background-color'] = '#f3f315';
 
 #about {
   background-color: #ff6600;
@@ -214,6 +212,7 @@ input[type="submit"]:hover {
   width: 20%;
   height: 180px;
   margin: 20px;
+  font-weight: bold;
 }
 
 #inputBox{
@@ -233,6 +232,7 @@ input[type="submit"]:hover {
 
 #table{
   margin-top: 50px;
+  margin-left: 10px;
   background-color: #83f52c;
 
 }
