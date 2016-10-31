@@ -22,7 +22,7 @@
       </div>
       </div>
     <div id="bannerText">
-      <h3 id="pats">Pat's <Salmon</h3>
+      <h3 id="pats">Pat's Salmon</h3>
       <h1 id="cookieStand">Cookie Stand</h1>
       <ul>
         <img src="fb-icon.png" class="socNetworks" alt="fb icon">
@@ -33,18 +33,22 @@
   </div>
     </header>
     <main>
-      <h1 id="merchHead">Check out our latest in-store merchandise!</h1>
-      <section id="merchSection">
-        <ul>
-          <li><div class="active"></div></li>
-          <li><div class="slider"></div><img src="cutter.jpeg" class="merch" alt="cutter pic"></li>
-          <li><div class="slider"></div><img src="frosted-cookie.jpg" class="merch" alt="frosted cookie pic"></li>
-          <li><div class="slider"></div><img src="shirt.jpg" class="merch" alt="shirt pic"></li>
-          <li><div class="slider"></div><img src="fish.jpg" class="merch" alt="fish fridge magnets pic"></li>
-        </ul>
-      </section>
+      <section id="formSection">
+        <form id="formId" method="post">
+          <fieldset id="fieldset"><legend id="cookieCalculator">Cookie Calculator</legend>
+            <div id="inputBox">
+            <input id="name" class="name" type="text" name="name" placeholder="Enter Store Name">
+            <input id="minCust" class="name" type="number" name="minCust" placeholder="Minimum # Customers">
+            <input id="maxCust" class="name" type="number" name="maxCust" placeholder="Maximum # Customers">
+            <input id="avgCookieSales" class="name" type="number" name="avgCookieSales" placeholder="Avg # Cookies / Hour">
+          </div>
+          <input id="submit" type="submit" value="Submit Form">
+          </fieldset>
+        </form>
+        <table id="table">
+        </table>
     </main>
-     <script src="app2.js" charset="utf-8"></script>
+     <script src="app.js" charset="utf-8"></script>
   </body>
-  <foot id = "footerStyle">&copy; 2016 by COOKIECUTTER CREATIONS for Pat's Salmon Cookiestand </foot>
+  <!-- <foot id = "footerStyle">put copywrite here</foot> -->
 </html>
