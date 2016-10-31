@@ -3,6 +3,15 @@
 // located here as a global value that can be used for all locations
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
+// home.addEventListener('mouseover', function(){
+//   var home = document.getElementById('home');
+//   if (home.style['background-color'] === '#e600ff'){
+//     home.style['background-color'] = '#f3f315';
+//   } else {
+//   this.style['background-color'] = '#e600ff';
+// };
+// }
+
 //functions: cookiesPerHour, predictedCustomers, renderHTMLSales
 function Location(Location, minCust , maxCust, avgCookieSales){
   this.storeName = Location;
@@ -37,7 +46,7 @@ function Location(Location, minCust , maxCust, avgCookieSales){
     for (var i = 0; i < hours.length; i++) {
       var tdDailySalesPerHour = document.createElement('td');
       // trBlankLocation = document.getElementById('trBlankLocation');
-      tdDailySalesPerHour.textContent = this.dailyCookieSalesPerHour[i];
+      tdDailySalesPerHour.textContent = this.randomCookieSalesPerHour[i];
       trBlankLocation.appendChild(tdDailySalesPerHour);
     };
 
@@ -49,7 +58,7 @@ function Location(Location, minCust , maxCust, avgCookieSales){
   this.randomCookieSalesPerHour = function (){
     for (var i = 0; i < hours.length; i++){
       this.dailyCookieSalesPerHour.push(Math.floor(this.randomCustPerHour() * this.avgCookieSales));
-      // console.log(hours[i] + this.dailyCookieSalesPerHour[i]);
+      console.log(hours[i] + this.dailyCookieSalesPerHour[i]);
       // this.DailyTotal += randomCookieSalesPerHour;
     }
   };
@@ -143,7 +152,7 @@ function cookieSalesFormSubmitHandler(event) {
   allLocations.push(store);
   console.log('allLocations: ', allLocations);
   // table.innerHTML = '';
-  // this.forEachHour();
+  // this.forEachLocation();
   // for (var i = 0; i < allLocations.length; i++){
   //   console.log(i, allLocations[i].storeName);
   //   allLocations[i].forEachHour();
