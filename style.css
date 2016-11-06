@@ -33,6 +33,10 @@
 
 }
 
+#salmon {
+  letter-spacing: 3px;
+}
+
 #cookieStand {
   display: inline;
   float: left;
