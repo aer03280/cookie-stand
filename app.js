@@ -19,9 +19,9 @@ var Pike = {
     for (var i = 0; i < hours.length; i++){
       this.cookiesPerHour.push(Math.floor(this.predictedCustomers() * this.avgCookieSales));
       var result2 = document.createElement('li');
-      result2.innerText = hours[i] + ': ' + this.cookiesPerHour;
+      result2.innerText = hours[i] + ': ' + this.cookiesPerHour[i];
       result.appendChild(result2);
-      console.log(hours[i] , this.cookiesPerHour);
+      console.log(hours[i] , this.cookiesPerHour[i]);
       // console.log(this.hours[i] + ': ' + this.cookiesPerHour[i] + ' cookies');
     }
   }
