@@ -238,13 +238,20 @@ input[type="submit"]:hover {
   float:left;
 }
 
-#table{
+#buildTable{
   margin-top: 50px;
   margin-left: 10px;
   background-color: #83f52c;
-
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
+.tdStyle {
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+}
 
 .bodyStyle{
   back-ground: #00ffcc;

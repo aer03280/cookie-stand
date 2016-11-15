@@ -22,10 +22,12 @@ function Location(Location, minCust , maxCust, avgCookieSales){
 
     var tdFirst = document.createElement('th');
     tdFirst.textContent = this.storeName;
+    tdFirst.setAttribute('class' , 'tdStyle');
     trBlankLocation.appendChild(tdFirst);
     for (var i = 0; i < hours.length; i++) {
       var tdDailySalesPerHour = document.createElement('td');
       tdDailySalesPerHour.textContent = this.dailyCookieSalesPerHour[i];
+      tdDailySalesPerHour.setAttribute('class' , 'tdStyle');
       trBlankLocation.appendChild(tdDailySalesPerHour);
     }
     var totalSalesDaily = 0;
@@ -35,6 +37,7 @@ function Location(Location, minCust , maxCust, avgCookieSales){
 
     var tdTotalSalesDaily = document.createElement('td');
     tdTotalSalesDaily.innerText = totalSalesDaily;
+    tdTotalSalesDaily.setAttribute('class' , 'tdStyle');
     trBlankLocation.appendChild(tdTotalSalesDaily);
 
   };
@@ -63,12 +66,14 @@ function createHeaderForHours(){
   for (var i = 0; i < hours.length; i++) {
     var thHours = document.createElement('th');
     thHours.textContent = hours[i];
+    thHours.setAttribute('class' , 'tdStyle');
     trHours.appendChild(thHours);
 
   };
   for (var i = 0; i < allLocations.length; i++);
   var totalRow = document.createElement('th');
   totalRow.textContent = 'Total/Location';
+  totalRow.setAttribute('class' , 'tdStyle');
   trHours.appendChild(totalRow);
 
 };
