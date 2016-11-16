@@ -198,6 +198,7 @@ input[type="submit"] {
   padding:5px;
   color: white;
   cursor: pointer;
+  width: 80px;
 }
 
 input[type="submit"]:hover {
@@ -217,7 +218,7 @@ input[type="submit"]:hover {
 #fieldset{
   border-width: medium;;
   background-color: #f3f315;
-  width: 20%;
+  width: 100px;
   height: 180px;
   margin: 20px;
   font-weight: bold;
@@ -239,7 +240,7 @@ input[type="submit"]:hover {
 }
 
 #buildTable{
-  margin-top: 50px;
+  margin-top: 70px;
   margin-left: 10px;
   background-color: #83f52c;
   border: 1px solid black;
