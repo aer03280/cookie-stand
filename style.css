@@ -75,7 +75,8 @@
   background-size: auto;
   color: white;
   font-family: 'Proza Libre', sans-serif;
-  font-size: 18px;
+  text-shadow: 3px 1px black;
+  font-size: 20px;
 
 }
 
@@ -94,22 +95,36 @@
 
 }
 
+#home:hover {
+  background-color: yellow;
+}
+
 
 #about {
   background-color: #ff6600;
-
 }
+
+#about:hover {
+  background-color: yellow;
+}
+
 #shop {
-  /*padding: 35px 42px 35px;*/
   background-color: #83f52c;
   padding-right: 25px;
   padding-left: 25px;
+}
 
+#shop:hover {
+  background-color: yellow;
 }
 
 #login {
   padding: 42px;
   background-color: #6e0dd0;
+}
+
+#login:hover {
+  background-color: yellow;
 }
 
 .socNetworks {
@@ -155,6 +170,7 @@
   padding: 50px;
   border: 3px solid black;
   background-color: teal;
+  font-family: 'Proza Libre', sans-serif;
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -214,18 +230,19 @@
 
 #aboutMain {
   padding: 50px 50px 100px;
+  margin-left: 20%;
 
 }
 
 
 #familyPic {
-  float: right;
-  margin-left: 300px;
-  margin-top: 40px;
-  margin-right: 20px;
-  width:75%;
-  height: 75%;
-  /*padding: 2px;*/
+  float: left;
+  display: inline;
+  margin-left: 90px;
+  margin-top: 10px;
+  margin-right: 25px;
+  width:40%;
+  height: 40%;
   align-content: center;
 
 }
@@ -233,15 +250,20 @@
 #familySquare {
   border: 2px;
   border-style: inset;
+  width: 100%;
+  height: 100%;
 }
 
 .aboutText {
   display: block;
   font-size: 20px;
-  position: relative;
-  top: 10px;
+  line-height: 110%;
+  text-align: justify;
+  width: 1000px;
+  /*position: relative;*/
+  /*top: 100px;*/
   font-family: 'Oxygen', sans-serif;
-  padding: 30px 50px 0px;
+  padding: 100px 5px -1px;
 }
 
 input[type="submit"] {
@@ -318,7 +340,20 @@ input[type="submit"]:hover {
 
 }
 
-#footerStyle{
+
+#locations {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#locationText {
+  color: white;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+#footerStyle {
   position: absolute;
   float: left;
   color: white;
@@ -327,5 +362,17 @@ input[type="submit"]:hover {
   width: 100%;
   height: 20px;
   margin-top: 130%;
+  margin-bottom: 25px;
+}
+
+#footerStyleAbout {
+  position: absolute;
+  float: left;
+  color: white;
+  text-align: center;
+  background-color: grey;
+  width: 100%;
+  height: 20px;
+  margin-top: 10%;
   margin-bottom: 25px;
 }
