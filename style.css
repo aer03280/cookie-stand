@@ -1,4 +1,3 @@
-
 #body {
   background-color: #e600ff;
 
@@ -7,6 +6,7 @@
 }
 
 #topBar {
+  position: static;
   background-color: teal;
   height: 275px;
   margin-top: 20px;
@@ -14,18 +14,30 @@
   border-bottom: 3px solid grey;
 }
 
+/*#locationHeader {
+  margin-top: 200px;
+}*/
+
+.stores {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
 #bannerText {
+  width: 600px;
+  height: 100px;
   align-content: left;
   float: left;
-  margin-top: 30px;
-  margin-left: 40px;
+  margin-left: 3%;
+  margin-top: 5%;
+  vertical-align: top;
 }
 
 #pats{
-  display: inline;
   float: left;
-  margin-left: 20px;
-  margin-top: 25px;
+  margin-left: 10px;
+  margin-top: 5px;
+  padding-bottom: 2%;
   font-family: 'Luckiest Guy', cursive;
   color: white;
   font-size: 52px;
@@ -34,13 +46,14 @@
 }
 
 #cookieStand {
-  display: inline;
   float: left;
-  margin-top: 100px;
+  padding-top: 3%;
   font-family: 'Luckiest Guy', cursive;
-  font-size: 100px;
+  font-size: 90px;
   text-shadow: 0 0 3px #e600ff, 0 0 5px #6e0dd0;
   color: white;
+  vertical-align: top;
+  margin-bottom: 5px;
 
 }
 
@@ -49,7 +62,7 @@
   display: inline;
   float: right;
   margin-top: 10px;
-  margin-right: 60px;
+  margin-right: 3%;
 }
 
 .nav {
@@ -62,7 +75,8 @@
   background-size: auto;
   color: white;
   font-family: 'Proza Libre', sans-serif;
-  font-size: 18px;
+  text-shadow: 3px 1px black;
+  font-size: 20px;
 
 }
 
@@ -81,17 +95,27 @@
 
 }
 
+#home:hover {
+  background-color: yellow;
+}
+
 
 #about {
   background-color: #ff6600;
-
 }
+
+#about:hover {
+  background-color: yellow;
+}
+
 #shop {
-  /*padding: 35px 42px 35px;*/
   background-color: #83f52c;
   padding-right: 25px;
   padding-left: 25px;
+}
 
+#shop:hover {
+  background-color: yellow;
 }
 
 #login {
@@ -99,47 +123,99 @@
   background-color: #6e0dd0;
 }
 
+#login:hover {
+  background-color: yellow;
+}
+
 .socNetworks {
-  list-style-type: none;
+  position: inherit;
   float: left;
+  list-style-type: none;
   display: inline-block;
-  margin: 1px;
+  margin: 0px 3px 3px;
+}
+
+#navIcons {
+  margin-top: 10px;
+  height: 100px;
+  width: 50px;
 }
 
 #merchHead {
-  display: inline;
-  float: left;
+  display: block;
+  position: fixed;
   font-family: 'Proza Libre', sans-serif;
   font-size: 20px;
-  border: 10px double #ff6600;
-  margin-top: 20px;
-  margin-left: 10%;
+  padding: 5px;
+  width: 300px;
+  border: 10px double #e600ff;
+  margin-top: 5px;
+  margin-left: 60%;
+  background-color: white;
+  text-align: center;
+  z-index: 9;
 }
 
 #merchSection {
-  float: left;
-  postion: relative;
-  bottom: 20px;
+  bottom: 10px;
   margin-left: 15%;
+  margin-top: 5%;
 
 }
 
-#merchSection li {
-  display: inline-block;
-  cursor: pointer;
+.homePics {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 50px;
+  padding: 50px;
+  border: 3px solid black;
+  background-color: teal;
+  font-family: 'Proza Libre', sans-serif;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-#merchSection .sliders{
+.homeText {
+  float: left;
+  background-color: white;
+  position: absolute;
+}
+
+.homePicsBox1 {
+  width: 300px;
+  float: left;
+  margin-top: 30px;
+  text-align: center;
+  position: absolute;
+  align-content: center;
+
+}
+
+.homePicsBox2 {
+  width: 300px;
+  float: left;
+  /*margin-left: 5%;
+  margin-right: 5%;*/
+  text-align: center;
+  position: absolute;
+  align-content: center;
+  margin-top: 930px;
+
+}
+
+
+/*#merchSection .homePics{
   border-radius: 100%;
   border: 2px solid white;
   width: 30px;
   height: 30px;
   margin: 5px;
-}
+}*/
 
-#merchSection .active{
+/*#merchSection .active{
   background-color: white;
-}
+}*/
 
 .aboutText {
   font: arial;
@@ -152,18 +228,19 @@
 
 #aboutMain {
   padding: 50px 50px 100px;
+  margin-left: 5%;
 
 }
 
 
 #familyPic {
-  float: right;
-  margin-left: 300px;
-  margin-top: 40px;
-  margin-right: 20px;
-  width:75%;
-  height: 75%;
-  /*padding: 2px;*/
+  float: left;
+  display: inline;
+  margin-left: 90px;
+  margin-top: 10px;
+  margin-right: 25px;
+  width:40%;
+  height: 40%;
   align-content: center;
 
 }
@@ -171,15 +248,20 @@
 #familySquare {
   border: 2px;
   border-style: inset;
+  width: 100%;
+  height: 100%;
 }
 
 .aboutText {
   display: block;
   font-size: 20px;
-  position: relative;
-  top: 10px;
+  line-height: 110%;
+  text-align: justify;
+  width: 1000px;
+  /*position: relative;*/
+  /*top: 100px;*/
   font-family: 'Oxygen', sans-serif;
-  padding: 30px 50px 0px;
+  padding: 100px 5px -1px;
 }
 
 input[type="submit"] {
@@ -190,6 +272,7 @@ input[type="submit"] {
   padding:5px;
   color: white;
   cursor: pointer;
+  width: 80px;
 }
 
 input[type="submit"]:hover {
@@ -209,10 +292,12 @@ input[type="submit"]:hover {
 #fieldset{
   border-width: medium;;
   background-color: #f3f315;
-  width: 20%;
+  width: 100px;
   height: 180px;
-  margin: 20px;
-  font-weight: bold;
+  margin: 20px 60px 20px;
+  font-weight: bolder;
+  font-size: 14px;
+  border: 3px solid black;
 }
 
 #inputBox{
@@ -228,15 +313,29 @@ input[type="submit"]:hover {
 
 #formSection{
   float:left;
+  width: 100px;
+  margin-left: 60px;
 }
 
-#table{
-  margin-top: 50px;
-  margin-left: 10px;
+#buildTable{
+  margin-top: 70px;
+  margin-left: 60px;
   background-color: #83f52c;
-
+  border: 3px solid black;
+  border-collapse: collapse;
 }
 
+#tableStyle {
+  width: 250px;
+  float: left;
+}
+
+.tdStyle {
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+}
 
 .bodyStyle{
   back-ground: #00ffcc;
@@ -248,13 +347,70 @@ input[type="submit"]:hover {
 
 }
 
-#footerStyle{
-  position: relative;
+
+#locations {
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  margin-left: 10%;
+  margin-top: 10%;
+  text-shadow: 0 0 3px teal, 0 0 5px teal;
+
+}
+
+#locationText {
+  color: white;
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 40px;
+  background-color: teal;
+  padding: 2px;
+}
+
+#footerStyleHome {
+  position: absolute;
   float: left;
   color: white;
   text-align: center;
   background-color: grey;
   width: 100%;
   height: 20px;
-  margin-top: 200px;
+  margin-top: 170%;
+  margin-bottom: 25px;
+}
+
+#footerStyleAbout {
+  position: absolute;
+  float: left;
+  color: white;
+  text-align: center;
+  background-color: grey;
+  width: 100%;
+  height: 20px;
+  margin-top: 10%;
+  margin-bottom: 25px;
+}
+
+#footerStyleLocations {
+  position: absolute;
+  float: left;
+  color: white;
+  text-align: center;
+  background-color: grey;
+  width: 100%;
+  height: 20px;
+  margin-top: 5%;
+  margin-bottom: 25px;
+}
+
+#footerStyleSales {
+  position: absolute;
+  float: left;
+  color: white;
+  text-align: center;
+  background-color: grey;
+  width: 75%;
+  height: 20px;
+  margin-top: 65%;
+  margin-bottom: 25px;
 }

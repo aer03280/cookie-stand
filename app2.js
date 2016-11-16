@@ -10,14 +10,12 @@ function Location(Location, minCust , maxCust, avgCookieSales){
   this.maxCust = maxCust;
   this.avgCookieSales = avgCookieSales;
   this.dailyCookieSalesPerHour = [];
-  console.log(this.dailyCookieSalesPerHour);
 
   this.randomCustPerHour = function() {
     return Math.floor(Math.random() * (this.maxCust - this.minCust) + this.minCust);
   };
 
   this.forEachHour = function forEachHour (){
-    console.log(this.storeName + 'forEachHour');
     this.randomCookieSalesPerHour();
     var trBlankLocation = document.createElement('tr');//blank tr to attach tds
     var attachTrToTable = document.getElementById('table');
@@ -45,7 +43,6 @@ function Location(Location, minCust , maxCust, avgCookieSales){
   this.randomCookieSalesPerHour = function (){
     for (var i = 0; i < hours.length; i++){
       this.dailyCookieSalesPerHour.push(Math.floor(this.randomCustPerHour() * this.avgCookieSales));
-      console.log(hours[i] + this.dailyCookieSalesPerHour[i]);
     };
 
   };
@@ -76,13 +73,10 @@ function createHeaderForHours(){
 
 // this is what runs the data from the location array and enters it into the tr
 function forEachLocation() {
-  console.log('forEachLocation');
   var grabTable = document.getElementById('table');
-  console.log(grabTable);
   grabTable.innerHTML = '';
   createHeaderForHours();
   for (var i = 0; i < allLocations.length; i++){
-    console.log('allLocations[i]: ', allLocations[i]);
     allLocations[i].randomCookieSalesPerHour();
     allLocations[i].forEachHour();
   };
@@ -101,7 +95,6 @@ function cookieSalesFormSubmitHandler(event) {
   var store = new Location(name,minHourlyCustomers,maxHourlyCustomers,averageCookies);
 
   allLocations.push(store);
-  console.log('allLocations: ', allLocations);
 
   // for (var i = 1; i < event.target.length - 1; i++) {
   //   event.target[i].value = '';
